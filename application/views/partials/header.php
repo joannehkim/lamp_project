@@ -7,10 +7,16 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <title></title>
+
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <!-- CSS here -->
 <link rel="stylesheet" type="text/css" href="/assets/home_view_style.css">
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="top">
+    <p>FREE SHIPPING ON ORDERS $75+</p>
+  </div>
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -20,40 +26,44 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" id="logo" href="/Products">K.C.P.K</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-<!--         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li> -->
+        <li><a href="#">New Arrivals</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Shirts</a></li>
+            <li><a href="/MShirts">Shirts</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Outerwear</a></li>
+            <li><a href="/outerwear">Outerwear</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Women<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Shirts</a></li>
+            <li><a href="/WShirts">Shirts</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Outerwear</a></li>
+            <li><a href="/WOuterwear">Outerwear</a></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+   <div class="input-group">
+       <input type="Search" placeholder="Search..." class="form-control" />
+       <div class="input-group-btn">
+        <button type="button" id="search" class="btn btn-default">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+       </div>
+   </div>
       </form>
-        <li><a href="#">My Account</a></li>
-        <li><a href="#">Cart</a></li>
+
+        <li><a href="/products/login">My Account</a></li>
+        <li><a href="#">Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
 <!--           <ul class="dropdown-menu">
@@ -68,3 +78,4 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+

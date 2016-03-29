@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Welcome to NastyKev</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -69,5 +71,24 @@ $this->load->view('/partials/header.php');
 		<img src = '/assets/M_tees/T4F.jpeg'>
 	</div>
 </div>
+
+
+<div class="footer">
+  <div class="col-l-4"></div>
+  <div class="col-l-4" id="newsletter">
+    <h3>NEWSLETTER</h3>
+    <p>Subscribe to our newsletter and get 10% off your first purchase!</p>
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <button type="submit" class="btn btn-default" id="submit">Submit</button>
+</form>
+  </div>
+  <div class="col-l-4"></div>
+</div>
+</div>
+
 </body>
 </html>

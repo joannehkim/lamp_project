@@ -3,21 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Products extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		$this->load->view('home_view');
@@ -25,6 +10,22 @@ class Products extends CI_Controller {
 	public function item()
 	{
 		$this->load->view('item_view');
+	}
+	public function login()
+	{
+		$this->load->view('login');
+	}
+	public function outerwear() {
+		$this->load->view('Outerwear');
+	}
+	public function menTees(){
+		$this->load->view('MenTees');
+	}
+	public function womenTees(){
+		$this->load->view('womenTees');
+	}
+	public function womenOuterwear(){
+		$this->load->view('WOuterwear');
 	}
 }
 

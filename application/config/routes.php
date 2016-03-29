@@ -52,5 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // this is the default controller. You need to change it depending on your project
 $route['default_controller'] = 'Products';
+$route['outerwear']= '/Products/Outerwear';
+$route['MShirts'] = '/Products/menTees';
+$route['WShirts'] = '/Products/womenTees';
+$route['WOuterwear'] = '/Products/womenOuterwear';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
