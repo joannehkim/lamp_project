@@ -1,0 +1,23 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.subcontent{
+	display:inline-block;
+	width:350px;
+	height:390px;
+}
+
+.subcontent img{
+	max-height: 100%;
+	max-width: 100%;
+}
+
+#container{
+	margin-left:15%;
+}
+
+.container-fluid {
+	background-color: white;
+}
