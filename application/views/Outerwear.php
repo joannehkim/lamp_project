@@ -50,6 +50,7 @@
 		}
 		.bold{
 			font-weight: bold;
+			color:black;
 		}
 		ul{
 			list-style: none;
