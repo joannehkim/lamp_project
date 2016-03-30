@@ -23,28 +23,34 @@
 <?php
 $this->load->view('/partials/header.php');
 ?>
+
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="/assets/samplebanner1.png" alt="Chania">
+      <img src="/assets/banner_2.png" alt="Chania">
     </div>
 
     <div class="item">
-      <img src="/assets/samplebanner2.png" alt="Chania">
+      <img src="/assets/banner_1.png" alt="Chania">
     </div>
 
     <div class="item">
-      <img src="/assets/samplebanner3.png" alt="Flower">
+      <img src="/assets/banner_3.png" alt="Flower">
     </div>
 
+    <div class="item">
+      <img src="/assets/banner_4.png" alt="Flower">
+    </div>
   </div>
 
   <!-- Left and right controls -->
@@ -57,27 +63,46 @@ $this->load->view('/partials/header.php');
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div class="shop">
+SHOP WOMEN
+</div>
+<div class="shop">
+SHOP MEN
+</div>
+
 <div id = 'container'>
 	<div class = 'subcontent'>
-		<a href = '/Products/item'><img src = '/assets/M_tees/T1F.jpeg'></a>
+		<a href = '/Products/item'>
+    <img src="/assets/adidas.png">
+    <img src = '/assets/image_2.png'></a>
+    <div class="shop_bottom">
+      SHOP OUTERWEAR
+    </div>
 	</div>
 	<div class = 'subcontent'>
-		<img src = '/assets/M_tees/T2F.jpeg'>
+    <img src="/assets/denim.png">
+		<img src = '/assets/image_1.png'>
+    <div class="shop_bottom">
+      SHOP NEW ARRIVALS
+    </div>
 	</div>
 	<div class = 'subcontent'>
-		<img src = '/assets/M_tees/T3F.jpeg'>
-	</div>
-	<div class = 'subcontent'>
-		<img src = '/assets/M_tees/T4F.jpeg'>
+    <img src="/assets/basics.png">
+		<img src = '/assets/image_3.png'>
+    <div class="shop_bottom">
+      SHOP SHIRTS
+    </div>
 	</div>
 </div>
 
 
+
 <div class="footer">
-  <div class="col-l-4"></div>
+  <div class="col-l-5"></div>
   <div class="col-l-4" id="newsletter">
     <h3>NEWSLETTER</h3>
-    <p>Subscribe to our newsletter and get 10% off your first purchase!</p>
+    <p class="white">Subscribe to our newsletter and get 10% off your first purchase!</p>
 <form class="form-inline" role="form">
   <div class="form-group">
     <label for="email">Email address:</label>
@@ -85,8 +110,27 @@ $this->load->view('/partials/header.php');
   </div>
   <button type="submit" class="btn btn-default" id="submit">Submit</button>
 </form>
+  <div class="col-xs-4">
+    <h3 class="footer_header">My Account</h3>
+      <ul>
+        <li><a href="#">Order History</a></li>
+      </ul>
   </div>
-  <div class="col-l-4"></div>
+  <div class="col-xs-4 col-centered">
+    <h3 class="footer_header">Customer Care</h3>
+      <ul>
+        <li><a href="#">Shipping Information</a></li>
+        <li><a href="#">Returns</a></li>
+     </ul>
+   </div>
+   <div class="col-xs-4">
+      <h3 class="footer_header">About Us</h3>
+       <ul>
+         <li><a href="#">Contact</a></li>
+         <li><a href="#">Store Location</a></li>
+       </ul>
+   </div>
+  </div>
 </div>
 </div>
 
