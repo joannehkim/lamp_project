@@ -30,19 +30,16 @@
 
 <div class="container">
     <div class="row">
-        <form action="/LoginReg/process_register" method="POST">
+        <form action="/Users/process_register" method="POST">
             <div class="col-md-5 col-md-offset-1">
+                <div id = "errors">
 <?php
-	if ($this->session->flashdata('errors')) {
-		foreach ($this->session->flashdata('errors') as $value)
-	{
-?>		<?= $value ?>
-<?php
-	}
-}
+    if ($this->session->flashdata('errors')) 
+    {   
+        echo $this->session->flashdata('errors');
+    }
 ?>
-
-	<?php echo $this->session->userData('loginError'); ?>
+                </div>
             	<legend><h3>Register</h3></legend>
                 <div class="form-group">
                     <label for="first_name">First Name:</label>
@@ -67,12 +64,12 @@
                 </div>
                 <div class="form-group">
                     <label for="birthday">Date of Birth:</label>
-                    <input type="date" class="form-control" name="date" id="date" placeholder="Birthday">
+                    <input type="date" class="form-control" name="birthday" id="birthday" placeholder="Birthday">
                 </div>
                 <input type="submit" class="btn btn-default" id="register" value="Register">
             </div>
        	</form>
-        <form action="/LoginReg/process_login" method="POST">
+        <form action="/Users/process_login" method="POST">
             <div class="col-md-5 col-md-offset-1">
             	<legend><h3>Already Have an Account?</h3></legend>
                 <div class="form-group">
