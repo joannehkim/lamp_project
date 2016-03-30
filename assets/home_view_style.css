@@ -173,7 +173,7 @@ a:hover {
 }
 
 body {
-    padding: 40px 0px 0px;   
+    padding: 10px 0px 0px;   
 }
 
 #search {
@@ -251,6 +251,12 @@ body {
     letter-spacing: 1px;
     background-color: white;
     text-transform: uppercase;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
