@@ -97,6 +97,29 @@ SHOP MEN
 </div>
 
 
+<div class="promoBox">
+  <div class="boxLeft">
+        <h6 class='h6_title'>FESTIVAL SEASON</h6>
+        <p class='black'>Be the first to know the latest trends for this upcoming season!</p>
+        <p class='black'>+</p>
+        <p class='black'>Learn how to <span>save 15%</span> on your first purchase!</p>
+        <form action="#">
+          <input class='left_input' type='text' placeholder="Enter your email here"></input>
+          <input class='input_submit' type='submit' value='>'>
+        </form>
+  </div>
+
+  <div class="boxRight">
+        <h6 class='h6_title'>THAT SHIP CRAY</h6>
+        <p class='black2'>GET <span>FREE USPS 2-3 DAY PRIORITY SHIPPING</span> </p>
+        <p class='black2'>ON ALL ORDERS + <span>FREE RETURNS!</span></p>
+        <form method="#">
+          <input class='learnMore' type='submit' value='LEARN MORE'>          
+        </form>
+  </div>
+</div>
+
+
 
 <div class="footer">
   <div class="col-l-5"></div>
