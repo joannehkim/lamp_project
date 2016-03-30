@@ -13,10 +13,44 @@
 <!-- CSS here -->
 <link rel="stylesheet" type="text/css" href="/assets/home_view_style.css">
 
+<script>
+$(function () {
+    $('a[href="#search"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+    
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+});
+</script>
+
+
+
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="top">
-    <p>FREE SHIPPING ON ORDERS $75+</p>
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="#search"><span class="glyphicon glyphicon-search white_search"></a></li>
+</ul>
+
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="What are you searching for?" />
+        <button type="submit" class="btn btn-primary" id="search_button">Search</button>
+    </form>
+</div>
+    <p class="white">FREE SHIPPING ON ORDERS $75+</p>
+
+
   </div>
+
+
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -26,13 +60,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" id="logo" href="/Products">K.C.P.K</a>
+      <a class="navbar-brand" id="logo" href="/Products"><img src="/assets/logo.png"></a>
     </div>
+
+
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">New Arrivals</a></li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -51,19 +88,19 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <form class="navbar-form navbar-left" role="search">
+<!--       <form class="navbar-form navbar-left" role="search">
    <div class="input-group">
-       <input type="Search" placeholder="Search..." class="form-control" />
+       <input type="Search" class="form-control" />
        <div class="input-group-btn">
         <button type="button" id="search" class="btn btn-default">
           <span class="glyphicon glyphicon-search"></span>
         </button>
        </div>
    </div>
-      </form>
+      </form> -->
 
         <li><a href="/products/login">My Account</a></li>
-        <li><a href="#">Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+        <li><a href="#">My Bag <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
 <!--           <ul class="dropdown-menu">
