@@ -232,7 +232,7 @@
       <h3 class="footer_header">About Us</h3>
        <ul>
          <li><a href="/users/history">History</a></li>
-         <li><a href="#">Contact Us</a></li>
+         <li><a href="/ContactUs">Contact Us</a></li>
        </ul>
    </div>
   </div>

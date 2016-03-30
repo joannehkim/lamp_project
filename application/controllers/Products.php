@@ -82,6 +82,10 @@ class Products extends CI_Controller {
 		$this->Product->editItemInfo($editedInfo);
 	}
 
+	function contactUs(){
+		$this->load->view('contactUs');
+	}
+
 }
 
 
