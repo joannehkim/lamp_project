@@ -30,57 +30,82 @@
 
 <div class="container">
     <div class="row">
-        <form action="/Users/process_register" method="POST">
+        <form action="/LoginReg/process_register" method="POST">
             <div class="col-md-4 col-md-offset-1">
-                <div id = "errors">
 <?php
-    if ($this->session->flashdata('errors')) 
-    {   
-        echo $this->session->flashdata('errors');
-    }
+	if ($this->session->flashdata('errors')) {
+		foreach ($this->session->flashdata('errors') as $value)
+	{
+?>		<?= $value ?>
+<?php
+	}
+}
 ?>
-                </div>
-            	<legend><h3 class="header">Register</h3></legend>
+
+	<?php echo $this->session->userData('loginError'); ?>
+            	<legend><h3 class="header">Shipping Information</h3></legend>
                 <div class="form-group">
                     <label for="first_name">First Name:</label>
                     <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
                 </div>
                 <div class="form-group">
                     <label for="last_name">Last Name:</label>
-                    <input type="text" class="form-control" name="last_name" id="alias" placeholder="Last Name">
+                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="example@domain.com">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Street">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                    <p>* Password should be at least 8 characters</p>
+                    <label for="address2">Address 2:</label>
+                    <input type="text" class="form-control" name="address2" id="address2" placeholder="Apt #">
                 </div>
                 <div class="form-group">
-                    <label for="passwordconf">Confirm Password:</label>
-                    <input type="password" class="form-control" name="passwordconf" id="passwordconf" placeholder="Confirm Password">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" name="city" id="city" placeholder="City">
                 </div>
                 <div class="form-group">
-                    <label for="birthday">Date of Birth:</label>
-                    <input type="date" class="form-control" name="birthday" id="birthday" placeholder="Birthday">
+                    <label for="state">State:</label>
+                    <input type="text" class="form-control" name="state" id="state" placeholder="State">
                 </div>
-                <input type="submit" class="btn btn-secondary" id="register_email" value="Register">
+                <div class="form-group">
+                    <label for="zipcode">Zipcode:</label>
+                    <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Zip Code">
+                </div>
             </div>
        	</form>
-        <form action="/Users/process_login" method="POST">
+        <form action="/LoginReg/process_login" method="POST">
             <div class="col-md-4 col-md-offset-1">
-            	<legend><h3 class="header">Have an Account? Login</h3></legend>
+            	<legend><h3 class="header">Billing Information</h3></legend>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="example@domain.com">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
                 </div>
-                <input type="submit" class="btn btn-secondary" id="login_email" name="login_email" value="Login">
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Street">
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address 2:</label>
+                    <input type="text" class="form-control" name="address2" id="address2" placeholder="Apt #">
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" name="city" id="city" placeholder="City">
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" class="form-control" name="state" id="state" placeholder="State">
+                </div>
+                <div class="form-group">
+                    <label for="zipcode">Zipcode:</label>
+                    <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Zip Code">
+                </div>
+                <input type="submit" class="btn btn-secondary" id="pay" name="pay" value="Pay">
             </div>
         </form>
     </div>

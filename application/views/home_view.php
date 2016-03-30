@@ -99,18 +99,20 @@ SHOP MEN
 
 <div class="promoBox">
   <div class="boxLeft">
-        <h6 class='h6_title'>FESTIVAL SEASON</h6>
-        <p class='black'>Be the first to know the latest trends for this upcoming season!</p>
-        <p class='black'>+</p>
-        <p class='black'>Learn how to <span>save 15%</span> on your first purchase!</p>
-        <form action="#">
-          <input class='left_input' type='text' placeholder="Enter your email here"></input>
-          <input class='input_submit' type='submit' value='>'>
-        </form>
+        <h6 class='h6_title'>LET'S KEEP IN TOUCH!</h6>
+        <p class='black'>Be the first to know the latest trends for this upcoming season!</p><br>
+        <p class='black'>Enter your email to <span>save 10%</span> on your first purchase!</p><br>
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label for="email"></label>
+    <input type="email" class="form-control" id="email" placeholder="Email address...">
+  </div>
+  <button type="submit" class="btn btn-secondary" id="submit">Submit</button>
+</form>
   </div>
 
   <div class="boxRight">
-        <h6 class='h6_title'>THAT SHIP CRAY</h6>
+        <h6 class='h6_title'>SHIPPING & RETURNS</h6>
         <p class='black2'>GET <span>FREE USPS 2-3 DAY PRIORITY SHIPPING</span> </p>
         <p class='black2'>ON ALL ORDERS + <span>FREE RETURNS!</span></p>
         <form method="#">
@@ -128,10 +130,10 @@ SHOP MEN
     <p class="white">Subscribe to our newsletter and get 10% off your first purchase!</p>
 <form class="form-inline" role="form">
   <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email">
+    <label for="email"></label>
+    <input type="email" class="form-control" id="email" placeholder="Email address...">
   </div>
-  <button type="submit" class="btn btn-default" id="submit">Submit</button>
+  <button type="submit" class="btn btn-secondary" id="submit">Submit</button>
 </form>
   <div class="col-xs-4">
     <h3 class="footer_header">My Account</h3>
@@ -142,14 +144,13 @@ SHOP MEN
   <div class="col-xs-4 col-centered">
     <h3 class="footer_header">Customer Care</h3>
       <ul>
-        <li><a href="#">Shipping Information</a></li>
-        <li><a href="#">Returns</a></li>
+        <li><a href="#">Shipping & Returns</a></li>
      </ul>
    </div>
    <div class="col-xs-4">
       <h3 class="footer_header">About Us</h3>
        <ul>
-         <li><a href="#">Contact</a></li>
+         <li><a href="#">History</a></li>
          <li><a href="#">Store Location</a></li>
        </ul>
    </div>
