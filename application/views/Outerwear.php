@@ -227,14 +227,14 @@
   <div class="col-xs-4 col-centered">
     <h3 class="footer_header">Customer Care</h3>
       <ul>
-        <li><a href="#">Shipping & Returns</a></li>
+        <li><a href="/users/shipping_returns">Shipping & Returns</a></li>
      </ul>
    </div>
    <div class="col-xs-4">
       <h3 class="footer_header">About Us</h3>
        <ul>
-         <li><a href="#">History</a></li>
-         <li><a href="#">Store Location</a></li>
+         <li><a href="/users/history">History</a></li>
+         <li><a href="#">Contact Us</a></li>
        </ul>
    </div>
   </div>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <?php $this->load->view('/partials/header');?>
-	<title>LOGIN REGISTRATION</title>
+	<title>SHIPPING & RETURNS</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -30,12 +30,15 @@
 
 <div class="container">
     <div class="row">
-        <form action="/LoginReg/process_register" method="POST">
             <div class="col-md-11">
-            	<legend><h2>About Us</h2></legend>
-                <h4 class="about_us">KCPC is a global online destination for men and women who love fashion. It was founded in 2016 by 4 coders. Each letter stands for the first letter of our last names.</h4>
+            	<legend><h2>Shipping</h2></legend>
+                <h4 class="about_us">Free Standard Shipping on U.S. Orders Over $75</h4>
             </div>
-       	</form>
+
+            <div class="col-md-11">
+            	<legend><h2>Returns</h2></legend>
+                <h4 class="about_us">We accept returns within 30 days of purchase. All original tags must be attached.</h4>
+            </div>
 
     </div>
 </div>
@@ -68,7 +71,7 @@
    <div class="col-xs-4">
       <h3 class="footer_header">About Us</h3>
        <ul>
-         <li><a href="/users/history">History</a></li>
+         <li><a href="#">History</a></li>
          <li><a href="#">Contact Us</a></li>
        </ul>
    </div>
