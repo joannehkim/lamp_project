@@ -101,7 +101,11 @@ body {
 #submit {
     background-color: white;
     border: 2px solid black;
+    border-left: none;
     font-weight: bolder;
+    border-radius: 0px;
+    margin-left: -8px;
+    height: 35px;
 }
 
 p {
