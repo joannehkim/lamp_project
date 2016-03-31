@@ -163,8 +163,8 @@
 
 			<form action='/products/add_to_cart' method='post'>
 				<div id="sizes"> 
-      				<select>
-      					<option class="btn btn--lg btn--full u-no-wrap u-padding-l--none u-padding-r--none">Pick Your Size</option>
+      				<select required>
+      					<option value = "" class="btn btn--lg btn--full u-no-wrap u-padding-l--none u-padding-r--none">Pick Your Size</option>
 	    				<option name='size' value='xsmall'>X-Small</option>
 	    				<option name='size' value='small'>Small</option>
 	    				<option name='size' value='medium'>Medium</option>
@@ -174,8 +174,8 @@
 				</div><br>
 
 				<div id="quantity">    			
-      				<select>
-      					<option class="btn btn--lg btn--full u-no-wrap u-padding-l--none u-padding-r--none">Quantity</option>
+      				<select required>
+      					<option value = "" class="btn btn--lg btn--full u-no-wrap u-padding-l--none u-padding-r--none">Quantity</option>
 	    				<option name='quantity' value='one'>One</option>
 	    				<option name='quantity' value='two'>Two</option>
 	    				<option name='quantity' value='three'>Three</option>
