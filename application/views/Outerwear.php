@@ -69,71 +69,19 @@
 	</style>
 
 	<script type="text/javascript">
-    	$(document).ready(function(){
-
-    		//Changes first image
-    		$('#1').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH1b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH1a.jpeg");
-    		});
-
-    		//Changes second image
-    		$('#2').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH2b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH2a.jpeg");
-    		});
-
-    		//Changes third image
-    		$('#3').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH3b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH3a.jpeg");
-    		});
-
-    		//Changes fourth image
-    		$('#4').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH4b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH4a.jpeg");
-    		});
-
-    		//Changes fifth image
-    		$('#5').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH5b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH5a.jpeg");
-    		});
-
-    		//Changes sixth image
-    		$('#6').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH6b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH6a.jpeg");
-    		});
-
-    		//Changes seventh image
-    		$('#7').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH7b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH7a.jpeg");
-    		});
-
-    		//Changes eigth image
-    		$('#8').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH8b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH8a.jpeg");
-    		});
-
-    		//Changes ninth image
-    		$('#9').hover(function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH9b.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/mensHoodies/MH9a.jpeg");
-    		});
-    	});
+		$(document).ready(function(){
+		   $('img').hover(function(){
+		     var temp = $(this).attr("src");
+		     var newimage = $(this).attr("data-alt-src");
+		     $(this).attr("src", newimage);
+		     $(this).attr("data-alt-src",temp);
+		   }, function(){
+		     var temp = $(this).attr("src");
+		     var newimage = $(this).attr("data-alt-src");
+		     $(this).attr("src", newimage);
+		     $(this).attr("data-alt-src",temp);
+		   });
+		});
 	</script>
 </head>
 <body>
@@ -154,51 +102,22 @@
 		
 		<div class="classContent">
 
+		<?php 
+			foreach($menOuterwear as $jacket ){
+
+		?>
+
 			<div class="product">
-				<img id = "1" class="picSize" src="/assets/mensHoodies/MH1a.jpeg" alt="Hoodie 1"/>
-				<h6>Without Walls Anorak Jacket</h6>
-				<p class='bold'>$99</p>
+				<img id = '<?= $jacket['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $jacket['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $jacket['back_image_filename']?>'/>
+				<h6><?= $jacket['name']?></h6>
+				<p class='bold'>$<?= $jacket['price'] 	?></p>
 			</div>
-			<div class="product">
-				<img id = "2" class="picSize" src="/assets/mensHoodies/MH2a.jpeg" alt="Hoodie 2"/>
-				<h6>Alpha Skymaster Bomber Jacket</h6>
-				<p class='bold'>$149</p>
-			</div>
-			<div class="product">
-				<img id = "3" class="picSize" src="/assets/mensHoodies/MH3a.jpeg" alt="Hoodie 3"/>
-				<h6>Rothco Security Coaches Jacket</h6>
-				<p class='bold'>$59</p>
-			</div>
-			<div class="product">
-				<img id = "4" class="picSize" src="/assets/mensHoodies/MH4a.jpeg" alt="Hoodie 4"/>
-				<h6>OBEY Suede Bomber Jacket</h6>
-				<p class='bold'>$215</p>
-			</div>
-			<div class="product">
-				<img id = "5" class="picSize" src="/assets/mensHoodies/MH5a.jpeg" alt="Hoodie 5"/>
-				<h6>Chums Mountain Anorak Jacket</h6>
-				<p class='bold'>$130</p>
-			</div>
-			<div class="product">
-				<img id = "6" class="picSize" src="/assets/mensHoodies/MH6a.jpeg" alt="Hoodie 6"/>
-				<h6>Calvin Klein Denim Trucker Jacket</h6>
-				<p class='bold'>$99</p>
-			</div>
-			<div class="product">
-				<img id = "7" class="picSize" src="/assets/mensHoodies/MH7a.jpeg" alt="Hoodie 7"/>
-				<h6>Patagonia Classic Retro-X Jacket</h6>
-				<p class='bold'>$229</p>
-			</div>
-			<div class="product">
-				<img id = "8" class="picSize" src="/assets/mensHoodies/MH8a.jpeg" alt="Hoodie 8"/>
-				<h6>adidas Sport Luxe Track Jacket</h6>
-				<p class='bold'>$69</p>
-			</div>
-			<div class="product">
-				<img id = "9" class="picSize" src="/assets/mensHoodies/MH9a.jpeg" alt="Hoodie 9"/>
-				<h6>Newline Imotion Stormy Sky Jacket</h6>
-				<p class='bold'>$110</p>
-			</div>
+
+
+		<?php
+			}
+		?>
+
 		</div>
 
 	</div>

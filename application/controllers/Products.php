@@ -17,11 +17,17 @@ class Products extends CI_Controller {
 	}
 	public function outerwear() 
 	{
-		$this->load->view('Outerwear');
+		$this->load->model('Product');
+		$products['menOuterwear'] = $this->Product->getMOuterwear();
+
+		$this->load->view('Outerwear', $products);
 	}
 	public function menTees()
 	{
-		$this->load->view('MenTees');
+		$this->load->model('Product');
+		$products['menTees'] = $this->Product->getMTees();
+
+		$this->load->view('MenTees', $products);
 	}
 	public function womenTees()
 	{
@@ -120,25 +126,6 @@ class Products extends CI_Controller {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

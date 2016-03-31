@@ -58,6 +58,9 @@
 		li{
 			margin-left: 20px;
 		}
+		h6{
+			height: 15px;
+		}
 
 				/* Footer style */
 		.footer {
@@ -70,71 +73,19 @@
 	</style>
 
 	<script type="text/javascript">
-    	$(document).ready(function(){
-
-    		//Changes first image
-    		$('#1').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T1B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T1F.jpeg");
-    		});
-
-    		//Changes second image
-    		$('#2').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T2B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T2F.jpeg");
-    		});
-
-    		//Changes third image
-    		$('#3').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T3B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T3F.jpeg");
-    		});
-
-    		//Changes fourth image
-    		$('#4').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T4B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T4F.jpeg");
-    		});
-
-    		//Changes fifth image
-    		$('#5').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T5B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T5F.jpeg");
-    		});
-
-    		//Changes sixth image
-    		$('#6').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T6B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T6F.jpeg");
-    		});
-
-    		//Changes seventh image
-    		$('#7').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T7B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T7F.jpeg");
-    		});
-
-    		//Changes eigth image
-    		$('#8').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T8B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T8F.jpeg");
-    		});
-    		
-    		//Changes ninth image
-    		$('#9').hover(function() {
-    			$(this).attr("src", "/assets/M_Tees/T9B.jpeg");
-    		}, function() {
-    			$(this).attr("src", "/assets/M_Tees/T9F.jpeg");
-    		});
-    	});
+		$(document).ready(function(){
+		   $('img').hover(function(){
+		     var temp = $(this).attr("src");
+		     var newimage = $(this).attr("data-alt-src");
+		     $(this).attr("src", newimage);
+		     $(this).attr("data-alt-src",temp);
+		   }, function(){
+		     var temp = $(this).attr("src");
+		     var newimage = $(this).attr("data-alt-src");
+		     $(this).attr("src", newimage);
+		     $(this).attr("data-alt-src",temp);
+		   });
+		});
 	</script>
 </head>
 <body>
@@ -155,51 +106,25 @@
 		
 		<div class="classContent">
 
+
+		<?php 
+			foreach($menTees as $shirt ){
+
+		?>
+
 			<div class="product">
-				<img id = "1" class="picSize" src="/assets/M_Tees/T1F.jpeg" alt="Tee 1"/>
-				<h6>UO Galaxy Pocket Tee</h6>
-				<p class='bold'>$20</p>
+				<img id = '<?= $shirt['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $shirt['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $shirt['back_image_filename']?>'/>
+				<h6><?= $shirt['name']?></h6>
+				<p class='bold'>$<?= $shirt['price'] ?></p>
 			</div>
-			<div class="product">
-				<img id = "2" class="picSize" src="/assets/M_Tees/T2F.jpeg" alt="Hoodie 2"/>
-				<h6>Feathers Rolled Cap Sleeve Tee</h6>
-				<p class='bold'>$34</p>
-			</div>
-			<div class="product">
-				<img id = "3" class="picSize" src="/assets/M_Tees/T3F.jpeg" alt="Hoodie 3"/>
-				<h6>CPO Boxy Tee</h6>
-				<p class='bold'>$24</p>
-			</div>
-			<div class="product">
-				<img id = "4" class="picSize" src="/assets/M_Tees/T4F.jpeg" alt="Hoodie 4"/>
-				<h6>Feathers Long + Loose Scoop Tee</h6>
-				<p class='bold'>$25</p>
-			</div>
-			<div class="product">
-				<img id = "5" class="picSize" src="/assets/M_Tees/T5F.jpeg" alt="Hoodie 5"/>
-				<h6>OBEY Heath Pocket Tee</h6>
-				<p class='bold'>$42</p>
-			</div>
-			<div class="product">
-				<img id = "6" class="picSize" src="/assets/M_Tees/T6F.jpeg" alt="Hoodie 6"/>
-				<h6>Ben Davis Pocket Tee</h6>
-				<p class='bold'>$24</p>
-			</div>
-			<div class="product">
-				<img id = "7" class="picSize" src="/assets/M_Tees/T7F.jpeg" alt="Hoodie 7"/>
-				<h6>CPO Rush Printed Band Collar Shirt</h6>
-				<p class='bold'>$49</p>
-			</div>
-			<div class="product">
-				<img id = "8" class="picSize" src="/assets/M_Tees/T8F.jpeg" alt="Hoodie 8"/>
-				<h6>The Narrows Destroyed Seam Tee</h6>
-				<p class='bold'>$38</p>
-			</div>
-			<div class="product">
-				<img id = "9" class="picSize" src="/assets/M_Tees/T9F.jpeg" alt="Hoodie 9"/>
-				<h6>adidas Street Kangaroo Pocket Tee</h6>
-				<p class='bold'>$55</p>
-			</div>
+
+
+		<?php
+			}
+		?>
+
+
+
 		</div>
 	</div>
 </div>

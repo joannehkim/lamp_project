@@ -54,6 +54,18 @@ class Product extends CI_Model {
 		$query = "DELETE FROM products WHERE id = ?";
 		$this->db->query($query, $itemID);
 	}
+	public function getMTees(){
+		$query = "select * from products where products.gender = 'men' AND products.type = 'shirt' ";
+
+		return $this->db->query($query)->result_array();
+	}
+	public function getMOuterwear(){
+		$query = "select * from products where products.gender = 'men' AND products.type = 'hoodie' ";
+
+		return $this->db->query($query)->result_array();
+
+		
+	}
 
 
 }
