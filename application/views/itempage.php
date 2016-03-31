@@ -161,26 +161,27 @@
 			<h3><?= $itemInfo['name']?></h3>
 			<h5><p class='bold'>$<?= $itemInfo['price'] ?></p></h5>	
 
-			<form action='/products/add_to_cart' method='post'>
+			<form id = 'cart' action='/products/add_to_cart' method='post'>
 				<div id="sizes"> 
-      				<select>
+				<input type = 'hidden' name = 'product_id' value = '<?= $itemInfo['id']?>'>
+      				<select name ='size' form = 'cart'>
       					<option class="btn btn--lg btn--full u-no-wrap u-padding-l--none u-padding-r--none">Pick Your Size</option>
-	    				<option name='size' value='xsmall'>X-Small</option>
-	    				<option name='size' value='small'>Small</option>
-	    				<option name='size' value='medium'>Medium</option>
-	    				<option name='size' value='large'>Large</option>
-	    				<option name='size' value='xlarge'>X-Large</option>
+	    				<option name='size' value='xs'>X-Small</option>
+	    				<option name='size' value='s'>Small</option>
+	    				<option name='size' value='m'>Medium</option>
+	    				<option name='size' value='l'>Large</option>
+	    				<option name='size' value='xl'>X-Large</option>
   					</select>
 				</div><br>
 
 				<div id="quantity">    			
-      				<select>
+      				<select name = 'quantity' form = 'cart'>
       					<option class="btn btn--lg btn--full u-no-wrap u-padding-l--none u-padding-r--none">Quantity</option>
-	    				<option name='quantity' value='one'>One</option>
-	    				<option name='quantity' value='two'>Two</option>
-	    				<option name='quantity' value='three'>Three</option>
-	    				<option name='quantity' value='four'>Four</option>
-	    				<option name='quantity' value='five'>Five</option>    				
+	    				<option name='quantity' value='1'>One</option>
+	    				<option name='quantity' value='2'>Two</option>
+	    				<option name='quantity' value='3'>Three</option>
+	    				<option name='quantity' value='4'>Four</option>
+	    				<option name='quantity' value='5'>Five</option>    				
   					</select> 
 				</div>
 				<input id="addtobagbutton" class="btn btn--lg btn--full u-no-wrap u-padding-l--none u-padding-r--none" type="submit" value="ADD TO BAG" onclick="" style="overflow: visible;">				

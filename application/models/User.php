@@ -8,6 +8,9 @@ class User extends CI_Model {
 		$query = "INSERT INTO users (first_name, last_name, email, password, birthday, created_at, updated_at) VALUES (?, ?, ?, ?, ?, NOW(), NOW())";
 		$values = array($newUser['first_name'], $newUser['last_name'], $newUser['email'], $newUser['password'], $newUser['birthday']);
 		$this->db->query($query, $values);
+		$newUserID = $this->db->insert_id();
+		$query = "INSERT INTO cart_users (user_id) VALUES ($newUserID)";
+		$this->db->query($query);
 	}
 	public function loginUser($user)
 	{
@@ -30,6 +33,11 @@ class User extends CI_Model {
 	public function admin_homepage()
 	{
 		$this->load->view('admin_homepage');
+	}
+	public function add_shipping_info($formInfo)
+	{
+		$query = "INSERT INTO addresses (street_number_name, city, state, zip_code, user_id, type) VALUES (?, ?, ?, ?, ? 'shipping')";
+		
 	}
 
 

@@ -92,20 +92,29 @@
     <form action = '/Products/edit_item/<?= $id ?>' method = 'POST'>
         <input type = 'hidden' name = 'id' value = '<?= $id ?>'>
         <h2>Edit the item name:</h2>
-        <input type = 'text' name = 'item_name'>
-        <h2>Edit the item description:</h2>
+        <input type = 'text' name = 'name'>
+        <h2>Is this item for men or women?</h2>
+        <input type = 'radio' name = 'gender' value = 'women'>Women
+        <input type = 'radio' name = 'gender' value = 'men'>Men
+        <h2>Input the item description:</h2>
         <input type = 'text' name = 'description'>
-        <h2>Edit the item price:</h2>
+        <h2>Input the front image: </h2>
+        <input type = 'file' name = 'front_image'>
+        <h2>Input the back image:</h2>
+        <input type = 'file' name = 'back_image'>
+        <h2>Input the item price:</h2>
         <input type = 'text' name = 'price'>
-        <h2>Edit the item type: </h2>
+        <h2>Input the item color:</h2>
+        <input type = 'text' name = 'color'>
+        <h2>Is this item a shirt or hoodie?</h2>
         <input type = 'radio' name = 'type' value = 'shirt'>Shirt
         <input type = 'radio' name = 'type' value = 'hoodie'>Hoodie
-        <h2>Input the sizes and quantity: </h2>
+        <h2>Input the sizes and quantity to add:</h2>
         XS: <input type = 'text' name = 'quant_xs'><br>
         S:  <input type = 'text' name = 'quant_s'><br>
         M:  <input type = 'text' name = 'quant_m'><br>
         L:  <input type = 'text' name = 'quant_l'><br>
         XL: <input type = 'text' name = 'quant_xl'><br>
-        <input type = 'submit' value = 'Edit item listing in database'>
+        <input type = 'submit' value = 'Add item to database'>
 </form>
 </div>

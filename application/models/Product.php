@@ -34,7 +34,26 @@ class Product extends CI_Model {
 
 	public function editItemInfo($editedInfo)
 	{
-		$query = "UPDATE products SET ";
+		
+		foreach($editedInfo as $category=>$editedValue)
+		{
+			$query = "UPDATE products SET $category = ? WHERE id = ?";
+			if($editedValue && $category!='id' && $category!='quant_xs' && $category!='quant_s' && $category!='quant_m' && $category!='quant_l' && $category!='quant_xl')
+			{
+				$values = array($editedValue,$editedInfo['id']);
+				$this->db->query($query,$values);
+			}
+			
+		}
+		$query = "UPDATE products_stock SET stock = ? WHERE size = ? AND product_id = ?";
+		$editedQuants = array('xs'=> $editedInfo['quant_xs'], 's'=>$editedInfo['quant_s'], 'm'=>$editedInfo['quant_m'], 'l'=>$editedInfo['quant_l'], 'xl'=>$editedInfo['quant_xl']);
+		foreach ($editedQuants as $size => $quant)
+		{
+			if($quant){
+				$values = array($quant, $size, $editedInfo['id']);
+				$this->db->query($query,$values);
+			}
+		}
 	}
 
 	public function getAllItemInfo()
@@ -79,6 +98,33 @@ class Product extends CI_Model {
 
 
     }
+    public function getProductStockfromProduct($product_id, $product_size)
+	{
+		$query = "SELECT products_stock.id FROM products LEFT JOIN products_stock ON products.id = products_stock.product_id WHERE products.id = ? AND products_stock.size = ?";
+		$values = array($product_id, $product_size);
+		return $this->db->query($query,$values)->row_array();
+	}
+	public function getCartItems($cart_id)
+	{
+		$query = "SELECT * FROM products LEFT JOIN products_stock ON products.id = products_stock.product_id LEFT JOIN cart_product ON products_stock.id = cart_product.product_stock_id WHERE cart_product.cart_id = $cart_id";
+		return $this->db->query($query)->result_array();
+	}
+	public function getCartIDfromUserID($user_id)
+	{
+		$query = "SELECT cart_id FROM cart_users WHERE cart_users.user_id = $user_id";
+		return $this->db->query($query)->row_array();
+	}
+	public function addItemToCart($itemToAdd, $cart_id)
+	{
+		$query = "INSERT INTO cart_product (product_stock_id, cart_id, quantity) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE quantity = ?";
+		$values = array($itemToAdd['id'], $cart_id, $itemToAdd['quantity'],$itemToAdd['quantity']);
+		$this->db->query($query,$values);
+	}
+	public function deleteBagItem($product_stock_id, $cart_id)
+	{
+		$query = "DELETE FROM cart_product WHERE product_stock_id = $product_stock_id AND cart_id = $cart_id";
+		$this->db->query($query);
+	}
 
 
 

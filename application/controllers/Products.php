@@ -132,8 +132,39 @@ class Products extends CI_Controller {
 	function edit_item($itemID)
 	{
 		$editedInfo = $this->input->post();
+			$config['upload_path']          = './assets/currentProducts';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['max_size']             = 100;
+            $config['max_width']            = 0;
+            $config['max_height']           = 0;
+            $config['overwrite']           = FALSE;
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('front_image'))
+            {
+            
+                    $data = array('upload_data' => $this->upload->data());
+                    $editedInfo['front_image_filename'] = $data['upload_data']['file_name'];
+
+            }
+            if ($this->upload->do_upload('back_image'))
+            {
+                    $data = array('upload_data' => $this->upload->data());
+                    $editedInfo['back_image_filename'] = $data['upload_data']['file_name'];
+
+
+            }
 		$this->load->model('Product');
 		$this->Product->editItemInfo($editedInfo);
+	}
+	public function add_to_cart()
+	{
+		$itemToAdd = $this->input->post();
+		$this->load->model('Product');
+		$itemToAdd['id']= $this->Product->getProductStockfromProduct($itemToAdd['product_id'], $itemToAdd['size']);
+		$this->Product->addItemToCart($itemToAdd, $this->session->userdata['cart_id']);
+
 	}
 	function itemDetails($itemID){
 		$this->load->model('Product');
@@ -143,9 +174,49 @@ class Products extends CI_Controller {
 
 		$this->load->view('itempage', $currentItems);
 	}
-
-
-
+	function goToCart(){
+		$this->session->userdata('cart_id');
+	}
+	public function displayBag()
+	{
+		$currentUserID = $this->session->userdata['currentUser']['id'];
+		$this->load->model('Product');
+		$currentCart = $this->Product->getCartIDfromUserID($currentUserID);
+		$currentCartID=$currentCart['cart_id'];
+		$cartItems['cart_id'] = $currentCartID;
+		$cartItems['allItems'] = $this->Product->getCartItems($currentCartID);
+		$cartItems['subtotal']=0;
+		foreach($cartItems['allItems'] as $item){
+			$cartItems['subtotal']+=($item['price']*$item['quantity']);
+		}
+		$this->load->view('Bag', $cartItems);
+	}
+	public function checkout()
+	{
+		$currentUserID = $this->session->userdata['currentUser']['id'];
+		$this->load->model('Product');
+		$currentCart = $this->Product->getCartIDfromUserID($currentUserID);
+		$currentCartID=$currentCart['cart_id'];
+		$cartItems['allItems'] = $this->Product->getCartItems($currentCartID);
+		$this->load->view('checkout_confirm', $cartItems);
+	}
+	public function shipping()
+	{
+		$this->load->view('shipping_info');
+	}
+	public function process_order()
+	{
+		$shippingInfo = $this->input->post();
+	}
+	public function remove_from_bag($product_stock_id)
+	{
+		$this->load->model('Product');
+		$currentUserID = $this->session->userdata['currentUser']['id'];
+		$currentCart = $this->Product->getCartIDfromUserID($currentUserID);
+		$currentCartID=$currentCart['cart_id'];
+		$this->Product->deleteBagItem($product_stock_id,$currentCartID);
+		redirect('/Products/DisplayBag');
+	}
 }
 
 
