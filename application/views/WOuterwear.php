@@ -57,6 +57,9 @@
         li{
             margin-left: 20px;
         }
+        h6{
+            height: 15px;
+        }
 
         /* Footer style */
         .footer {
