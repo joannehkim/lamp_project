@@ -142,7 +142,7 @@
        ?>
 
            <div class="product">
-               <img id = '<?= $tees['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $tees['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $tees['back_image_filename']?>'/>
+               <a href="/itemDetails/<?=$tees['id']?>"><img id = '<?= $tees['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $tees['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $tees['back_image_filename']?>'/></a>
                <h6><?= $tees['name']?></h6>
                <p class='bold'>$<?= $tees['price']     ?></p>
            </div>

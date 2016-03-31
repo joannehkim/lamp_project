@@ -73,6 +73,13 @@ class Product extends CI_Model {
         $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'hoodie' ";
         return $this->db->query($query)->result_array();
     }
+    public function getRandomItems($id){
+    	$query = "SELECT * FROM products WHERE gender = ? ORDER BY RAND() LIMIT 3";
+    	return $this->db->query($query, $id)->result_array();
+
+
+    }
+
 
 
 }

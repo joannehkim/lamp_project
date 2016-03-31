@@ -109,7 +109,7 @@
        ?>
 
            <div class="product">
-               <img id = '<?= $hoodies['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $hoodies['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $hoodies['back_image_filename']?>'/>
+               <a href="/itemDetails/<?=$hoodies['id']?>"><img id = '<?= $hoodies['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $hoodies['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $hoodies['back_image_filename']?>'/></a>
                <h6><?= $hoodies['name']?></h6>
                <p class='bold'>$<?= $hoodies['price']     ?></p>
            </div>

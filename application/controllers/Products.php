@@ -135,6 +135,16 @@ class Products extends CI_Controller {
 		$this->load->model('Product');
 		$this->Product->editItemInfo($editedInfo);
 	}
+	function itemDetails($itemID){
+		$this->load->model('Product');
+		$currentItems['itemInfo'] = $this->Product->getItemInfo($itemID);
+
+		$currentItems['items']= $this->Product->getRandomItems($currentItems['itemInfo']['gender']);
+
+		$this->load->view('itempage', $currentItems);
+	}
+
+
 
 }
 

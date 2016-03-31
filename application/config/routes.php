@@ -57,5 +57,6 @@ $route['MShirts'] = '/Products/menTees';
 $route['WShirts'] = '/Products/womenTees';
 $route['WOuterwear'] = '/Products/womenOuterwear';
 $route['ContactUs'] = '/Products/contactUs';
+$route['itemDetails/(:any)'] = 'Products/itemDetails/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -45,6 +45,9 @@
 		h4, .btn-group, .click-nav, #addtobagbutton, h5 {
 			margin-top:20px;
 		}
+		h6{
+			height:15px;
+		}
 		#addtobagbutton {
 			background-color:black;
 			color:white;
@@ -67,27 +70,33 @@
 		}
 		#bottom {
 			margin-top:150px;
+			height: 400px;
 		}
-		#bottom img {
-			width:80%;
-			height: auto;
-		}
+
 		.extra {
 			display:inline-block;
+			height: 347px;
+			width: 232px;
+			text-align: center;
+			margin: 10px;
+		}
+		img{
+			max-height: 100%;
+			max-width: 100%;
 		}
 		.suggest {
 			margin-right:20px;
 		}
-
 		.sizes {
 			width:50px;
 			height:20px;
 		}	
-		
 		.clicker {
 			border-radius:5px;
 		}
-
+		.bold{
+			font-weight: bold;
+		}
 		#sizes select{
 			background: black;
 			color: white;
@@ -141,16 +150,16 @@
 <body>
 	<div id="container">
 		<div id="thumbs" class='col-md-1'>
-			<img id='T1F' src="/assets/currentProducts/<?= $menTees['front_image_filename']?>">
-			<img id='T1B' src="/assets/currentProducts/<?= $menTees['back_image_filename']?>">
+			<img id='T1F' src="/assets/currentProducts/<?= $itemInfo['front_image_filename']?>">
+			<img id='T1B' src="/assets/currentProducts/<?= $itemInfo['back_image_filename']?>">
 		</div>		
 		<div id='leftside' class='col-md-1'>		
-			<img id='MT1' src="/assets/currentProducts/<?= $menTees['front_image_filename']?>" height='460'>
+			<img id='MT1' src="/assets/currentProducts/<?= $itemInfo['front_image_filename']?>" height='460'>
 		</div>
 		
 		<div id="rightside">
-			<h3><?= $menTees['name']?></h3>
-			<h5><p>$<?= $menTees['price'] ?></p></h5>	
+			<h3><?= $itemInfo['name']?></h3>
+			<h5><p class='bold'>$<?= $itemInfo['price'] ?></p></h5>	
 
 			<form action='/products/add_to_cart' method='post'>
 				<div id="sizes"> 
@@ -178,29 +187,31 @@
 			</form>
 			<div id='description'>
 				<h4>Description</h4>
-					<h5><?= $menTees['description']?></h5>
+					<h5><?= $itemInfo['description']?></h5>
 			</div>
 		</div>
 
 		<div id="bottom">
 			<h2>Other Items You Might Like...</h2>
-			<div class="extra">
-				<img id='<?= $shirt['id'] ?>' class='suggest' src="/assets/M_Tees/T2F.jpeg" data-alt-src='/assets/M_Tees/T2B.jpeg'>
-				<h6>Feathers Rolled Cap Sleeve Tee</h6>
-				<p class='bold'>$34</p>
-			</div>
+
+			<!-- item['gender'] -->
+
+			<?php
+			foreach($items as $randomItem) {
+			?>
 
 			<div class="extra">
-				<img id='3' class='suggest' src="/assets/M_Tees/T3F.jpeg" data-alt-src='/assets/M_Tees/T3B.jpeg'>
-				<h6>CPO Boxy Tee</h6>
-				<p class='bold'>$24</p>
+				<a href="/itemDetails/<?=$randomItem['id']?>"><img id='<?= $randomItem['id'] ?>' class='suggest' src="/assets/currentProducts/<?= $randomItem['front_image_filename']?>" data-alt-src='/assets/currentProducts/<?= $randomItem['back_image_filename']?>'></a>
+				<h6><?= $randomItem['name'] ?></h6>
+				<p class='bold'>$<?= $randomItem['price'] ?></p>
 			</div>
 
-			<div class="extra">
-				<img id='4' class='suggest' src="/assets/M_Tees/T4F.jpeg" data-alt-src="/assets/M_Tees/T4B.jpeg">
-				<h6>Feathers Long + Loose Scoop Tee</h6>
-				<p class='bold'>$25</p>
-			</div>
+			<?php
+			}
+			?>
+
+
+
 		</div>
 	</div>
 	<?php $this->load->view('partials/footer'); ?>
