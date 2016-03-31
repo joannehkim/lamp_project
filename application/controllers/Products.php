@@ -30,14 +30,17 @@ class Products extends CI_Controller {
 		$this->load->view('MenTees', $products);
 	}
 	public function womenTees()
-	{
-		$this->load->view('womenTees');
-	}
-	public function womenOuterwear()
-	{
-		$this->load->view('WOuterwear');
-	}
-
+    {
+        $this->load->model('Product');
+        $products['allWtees'] = $this->Product->getWTees();
+        $this->load->view('womenTees', $products);
+    }
+    public function womenOuterwears()
+    {
+        $this->load->model('Product');
+        $products['allWOuterwears'] = $this->Product->getWOuterwears();
+        $this->load->view('WOuterwear', $products);
+    }
 	public function add_item()
 	{	
 		$this->load->library("form_validation");

@@ -64,8 +64,15 @@ class Product extends CI_Model {
 
 		return $this->db->query($query)->result_array();
 
-		
 	}
+    public function getWTees() {
+        $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'shirt' ";
+        return $this->db->query($query)->result_array();
+    }
+    public function getWOuterwears() {
+        $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'hoodie' ";
+        return $this->db->query($query)->result_array();
+    }
 
 
 }

@@ -83,7 +83,7 @@ $(function () {
           <ul class="dropdown-menu">
             <li><a href="/WShirts">Shirts</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="/WOuterwear">Outerwear</a></li>
+            <li><a href="/products/womenOuterwears">Outerwear</a></li>
           </ul>
         </li>
       </ul>
