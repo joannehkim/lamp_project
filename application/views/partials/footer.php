@@ -1,5 +1,5 @@
 <div class="footer">
-  <div class="col-l-5"></div>
+  <div class="col-l-5">
   <div class="col-l-4" id="newsletter">
     <h3>NEWSLETTER</h3>
     <p class="white">Subscribe to our newsletter and get 10% off your first purchase!</p>
@@ -8,7 +8,10 @@
     <label for="email"></label>
     <input type="email" class="form-control" id="email" placeholder="Email address...">
   </div>
-  <button type="submit" class="btn btn-secondary" id="submit">Submit</button>
+  <button type="submit" class="btn btn-secondary" id="submit">Submit</button><br><br>
+  <a href="#"><img src="/assets/facebook.png" width="40" height="40"></a>
+<a href="#"><img src="/assets/instagram.png" width="40" height="40"></a>
+<a href="#"><img src="/assets/twitter.png" width="40" height="40"></a>
 </form>
   <div class="col-xs-4">
     <h3 class="footer_header">My Account</h3>
@@ -31,4 +34,4 @@
    </div>
   </div>
 </div>
-</div>
+</div></div>

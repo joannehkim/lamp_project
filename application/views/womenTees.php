@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Shirts</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -13,11 +20,12 @@
             padding: 0px;
             margin: 0px;
         }
-        #container{
+        .container{
             margin:0px;
 /*            border: 5px dotted red;*/
-            width: 1010px;
-            margin: 130px 0px 0px 140px; 
+            width: 100%;
+            height: 900px;
+            margin: 130px 0px 0px 0px; 
             
         }
         .categories{
@@ -27,7 +35,7 @@
             vertical-align: top;
         }
         .rightSide{
-            /*border: 2px dotted black;*/
+            border: 2px dotted black;
             display: inline-block;
             vertical-align: top;
             width: 805px;
@@ -57,9 +65,6 @@
         li{
             margin-left: 20px;
         }
-        h6{
-            height: 15px;
-        }
 
                 /* Footer style */
         .footer {
@@ -67,6 +72,22 @@
             height: 300px;
             margin-top: 80px;
         }
+        .category {
+            color: black;
+            margin-left: 70px;
+        }
+        .dropdown {
+            text-align: center;
+        }
+        .span6 {
+            width: 200px;
+        }
+        .label {
+            color: black;
+            font-size: 1em;
+        }
+
+
     </style>
 
 
@@ -89,21 +110,32 @@
 </head>
 <body>
 
-<div id='container'>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 span6">
     <div class='categories'>
-        <h3>Category</h3>
+        <h3 class="category">Category</h3>
         <ul>
-            <li><a href="#">View All</a></li>
-            <li><a href="#">Shirts</a></li>
-            <li><a href="#">Outerwear</a></li>
+            <li><a class="category" href="#">View All</a></li>
+            <li><a class="category" href="#">Shirts</a></li>
+            <li><a class="category" href="#">Outerwear</a></li>
         </ul>
     </div>
+        </div>
+        <div class="col-md-9 span3">
 
-    <div class="rightSide">
-        <h2>SHIRTS</h2>
-        
         <div class="classContent">
+<form action="#">
+    <p>
+        <label class="label">SORT BY:</label>
+        <select class="turnintodropdown">
+            <option>New Arrivals</option>
+            <option>Price: High to Low</option>
+        </select>
+    </p>
+</form>
+
 <?php 
            foreach($allWtees as $tees ){
 
@@ -119,6 +151,8 @@
        <?php
            }
        ?>
+        </div>
+
         </div>
     </div>
 </div>
