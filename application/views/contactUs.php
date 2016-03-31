@@ -60,6 +60,9 @@
 	.storeInfo{
 		margin-left:100px;
 	}
+	.space{
+		margin-left: 137px;
+	}
 
 </style>
 
@@ -89,7 +92,7 @@ $this->load->view('/partials/header.php');
 		<ul>
 			<li><img src="/assets/mail.png"><span class='ul_head'>EMAIL</span></li>
 			<li>Email us anytime and we will get back to you within 24hrs. </li>
-			<li><a class='black' href="#">sales@KPCK.com</a></li>
+			<li><a class='black' href="#">sales.KCPK@gmail.com</a></li>
 		</ul>
 	</div>
 
@@ -99,20 +102,20 @@ $this->load->view('/partials/header.php');
 			<h5>LOS ANGELES, CA</h5>
 			<table>
 				<tr>
-					<td>MON - THUR</td>
-					<td>7AM - 8PM</td>
+					<td><span>MON - THUR</span></td>
+					<td><span class='space'>7AM - 8PM</span></td>
 				</tr>
 				<tr>
-					<td>FRI</td>
-					<td>7AM - 5PM</td>
+					<td><span>FRI</span></td>
+					<td><span class='space'>7AM - 5PM</span></td>
 				</tr>
 				<tr>
-					<td>SAT</td>
-					<td>7AM - 3PM</td>
+					<td><span>SAT</span></td>
+					<td><span class='space'>7AM - 3PM</span></td>
 				</tr>				
 				<tr>
-					<td>SUN</td>
-					<td>7AM - 3PM</td>
+					<td><span>SUN</span></td>
+					<td><span class='space'>7AM - 3PM</span></td>
 				</tr>
 			</table>
 
