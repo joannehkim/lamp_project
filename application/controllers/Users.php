@@ -112,22 +112,6 @@ class Users extends CI_Controller {
 		$products['allProducts'] = $this->Product->getAllItemInfo();
 		$this->load->view('admin_homepage', $products);
 	}
-	public function history() 
-	{
-		$this->load->view('history');
-	}
-	public function shipping_info()
-	{
-		$this->load->view('shipping_info');
-	}
-	public function shipping_returns()
-	{
-		$this->load->view('shipping_returns');
-	}
-	public function contact()
-	{
-		$this->load->view('contactUs');
-	}
 }
 
 

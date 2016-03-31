@@ -89,15 +89,22 @@
 
 </style>
 <div id = 'container'>    
-    <form action = '/Products/add_item' method = 'POST'>
+    <form action = '/Products/add_item' method = 'POST' enctype = 'multipart/form-data'>
         <h2>Input the item name:</h2>
         <input type = 'text' name = 'item_name'>
+        <h2>Is this item for men or women?</h2>
+        <input type = 'radio' name = 'gender' value = 'women'>Women
+        <input type = 'radio' name = 'gender' value = 'men'>Men
         <h2>Input the item description:</h2>
         <input type = 'text' name = 'description'>
-        <h2>Select product images: </h2>
-        <input type = 'file' name = 'product_image[]' multiple>
+        <h2>Input the front image: </h2>
+        <input type = 'file' name = 'front_image'>
+        <h2>Input the back image:</h2>
+        <input type = 'file' name = 'back_image'>
         <h2>Input the item price:</h2>
         <input type = 'text' name = 'price'>
+        <h2>Input the item color:</h2>
+        <input type = 'text' name = 'color'>
         <h2>Is this item a shirt or hoodie?</h2>
         <input type = 'radio' name = 'type' value = 'shirt'>Shirt
         <input type = 'radio' name = 'type' value = 'hoodie'>Hoodie

@@ -101,6 +101,9 @@
         .actionlink{
         	color:black;
         }
+        .productPreview{
+            height:50px;
+        }
 
 </style>
 
@@ -116,21 +119,21 @@
         <td>Product description</td>
         <td>Product price</td>
         <td>Product type</td>
-        <td>Product size</td>
-        <td>Product stock</td>
+        <td>Product size: Product stock</td>
         <td>Actions</td>
     </tr>
 <?php
-    foreach ($allProducts as $product){
+    foreach ($allProducts as $product)
+    {
+        $previousProductID=$product['id'];
 ?>
     <tr class = 'iteminfo'>
         <td><?= $product['id']?></td>
-        <td><?= $product['name']?></td>
+        <td><?= $product['name']?> <br><img class = 'productPreview' src = '/assets/currentProducts/<?= $product['front_image_filename']?>'></td>
         <td><?= $product['description']?></td>
         <td><?= $product['price']?></td>
         <td><?= $product['type']?></td>
-        <td><?= $product['size']?></td>
-        <td><?= $product['stock']?></td>
+        <td><?= $product['size']?>: <?= $product['stock']?></td>
         <td><a class = 'actionlink' href = '/Products/removeProductConfirm/<?= $product['id'] ?>'>Remove</a><br> <a class = 'actionlink' href = '/Products/editProductForm/<?= $product['id'] ?>'>Edit Product</a></td>
     </tr>
 <?php

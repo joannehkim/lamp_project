@@ -91,6 +91,9 @@
             border-width:1px;
         }
 
+        .actionlink{
+            color:black;
+        }
 
 </style>
 
@@ -98,7 +101,6 @@
 </head>
 <body>
 <div id = 'container'>
-    <a href = "/Products/add_item_form">Click here to add an item.</a>
 <table>
     <tr>
         <td>Product id</td>
@@ -106,8 +108,6 @@
         <td>Product description</td>
         <td>Product price</td>
         <td>Product type</td>
-        <td>Product size</td>
-        <td>Product stock</td>
         <td>Actions</td>
     </tr>
     <tr class = 'iteminfo'>
@@ -116,9 +116,7 @@
         <td><?= $description ?></td>
         <td><?= $price ?></td>
         <td><?= $type ?></td>
-        <td><?= $size ?></td>
-        <td><?= $stock ?></td>
-        <td><a href = '/Products/removeProduct/<?= $id ?>'>Confirm Product Removal</a></td>
+        <td><a class = 'actionlink' href = '/Products/removeProduct/<?= $id ?>'>Confirm Product Removal</a></td>
     </tr>
 </div>
 </body>

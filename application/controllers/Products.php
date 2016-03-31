@@ -51,9 +51,46 @@ class Products extends CI_Controller {
 					 $this->load->model('Product');
 					 // var_dump($newUser);
 				  //    die();
-					 $this->Product->addItem($newItem);
-					 redirect('/Users/admin_homepage');
-				}
+					 
+					 //image upload code
+					    $config['upload_path']          = './assets/currentProducts';
+		                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+		                $config['max_size']             = 100;
+		                $config['max_width']            = 0;
+		                $config['max_height']           = 0;
+		                $config['overwrite']           = FALSE;
+
+		                $this->load->library('upload', $config);
+
+		                if ( ! $this->upload->do_upload('front_image'))
+		                {
+		                        $error = array('error' => $this->upload->display_errors());
+
+		                        $this->load->view('upload_form', $error);
+		                }
+		                else
+		                {
+		                        $data = array('upload_data' => $this->upload->data());
+		                        $newItem['front_image_filename'] = $data['upload_data']['file_name'];
+
+		                }
+		                if ( ! $this->upload->do_upload('back_image'))
+		                {
+		                        $error = array('error' => $this->upload->display_errors());
+
+		                        $this->load->view('upload_form', $error);
+		                }
+		                else
+		                {
+		                        $data = array('upload_data' => $this->upload->data());
+		                        $newItem['back_image_filename'] = $data['upload_data']['file_name'];
+
+
+		                }
+
+		                	 $this->Product->addItem($newItem);
+							 redirect('/Users/admin_homepage');
+						}
 	}
 	function add_item_form(){
 		$this->load->view('add_item_form');
@@ -80,10 +117,6 @@ class Products extends CI_Controller {
 		$editedInfo = $this->input->post();
 		$this->load->model('Product');
 		$this->Product->editItemInfo($editedInfo);
-	}
-
-	function contactUs(){
-		$this->load->view('contactUs');
 	}
 
 }
