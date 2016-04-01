@@ -149,9 +149,15 @@
        ?>
 
            <div class="product">
+<<<<<<< HEAD
                <img id = '<?= $outerwear['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $outerwear['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $outerwear['back_image_filename']?>'/>
                <h6><?= $outerwear['name']?></h6>
                <p class='bold'>$<?= $outerwear['price']     ?></p>
+=======
+               <a href="/itemDetails/<?=$hoodies['id']?>"><img id = '<?= $hoodies['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $hoodies['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $hoodies['back_image_filename']?>'/></a>
+               <h6><?= $hoodies['name']?></h6>
+               <p class='bold'>$<?= $hoodies['price']     ?></p>
+>>>>>>> 3ce3cc0397a4b0f255f853bd7f5a42975f73e5a0
            </div>
 
 

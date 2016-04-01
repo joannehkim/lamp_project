@@ -56,6 +56,9 @@ class Users extends CI_Controller {
 					 $this->load->model('User');
 					 $currentUser = $this->User->loginUser($newUser);
 					 $this->session->set_userdata('currentUser', $currentUser);
+					 $this->load->model('Product');
+					 $this->session->set_userdata('cart_id',$this->Product->getCartIDfromUserID($currentUser['id']));
+
 				     redirect('/Users/displayProfile');
 				}
 	}

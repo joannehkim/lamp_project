@@ -9,7 +9,7 @@
     <label for="email"></label>
     <input type="email" class="form-control" id="email" placeholder="Email address...">
   </div>
-  <button type="submit" class="btn btn-secondary" id="submit">Submit</button><br><br>
+  <button type="submit" class="btn btn-secondary" id="submit">></button><br><br>
   <a href="#"><img src="/assets/facebook.png" width="40" height="40"></a>
 <a href="#"><img src="/assets/instagram.png" width="40" height="40"></a>
 <a href="#"><img src="/assets/twitter.png" width="40" height="40"></a>

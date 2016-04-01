@@ -107,7 +107,7 @@ $this->load->view('/partials/header.php');
     <label for="email"></label>
     <input type="email" class="form-control" id="email" placeholder="Email address...">
   </div>
-  <button type="submit" class="btn btn-secondary" id="submit">Submit</button>
+  <button type="submit" class="btn btn-secondary" id="submit">></button>
 </form>
   </div>
 

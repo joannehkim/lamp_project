@@ -107,12 +107,12 @@
 ?>
 			<div class="bagList">
 				<tr>
-					<td class ='style'><a href='/itemDetails/<?= $cartItem['product_id'] ?>'><img class='productImage' src = '/assets/currentProducts/<?= $cartItem['front_image_filename'] ?>'/></a></td>
+					<td class ='style'><a href='/ItemDetails/<?= $cartItem['id'] ?>'><img class='productImage' src = '/assets/currentProducts/<?= $cartItem['front_image_filename'] ?>'/></a></td>
 					<td class ='name'><?= $cartItem['name'] ?></td>
 					<td class ='size'><?= $cartItem['size'] ?></td>
 					<td class ='qty'><?= $cartItem['quantity'] ?></td>
 					<td class ='price'>$<?= $cartItem['price'] ?></td>
-					<td class='action'><a href="/Products/remove_from_bag/<?= $cartItem['id'] ?>">REMOVE</a></td>
+					<td class='action'><a href="#">REMOVE</a></td>
 					<!-- NEED TO ADD REMOVE FUNCTIONALITY -->
 				</tr>
 			</div>
@@ -133,7 +133,7 @@
 				<table class='orderTotal'>
 					<tr>
 						<td class='totalStyle'>SUBTOTAL</td>
-						<td class='money'>$<?=$subtotal ?></td>
+						<td class='money'>$78</td>
 					</tr>
 
 					<tr>
@@ -143,12 +143,11 @@
 					</tr>
 					<tr>
 						<td class='totalStyle'>ESTIMATED TOTAL</td>
-						<td class='money'>$<?= $subtotal ?></td>
+						<td class='money'>$78</td>
 					</tr>
 				</table>
-				<form action='/Products/Checkout' method = 'POST'>
-					<input type = 'hidden' name = 'subtotal' value ='<?= $subtotal ?>'>
-					<input type='submit' value='PROCEED TO CHECKOUT'></input>	
+				<form action='/Products/shipping' method = 'POST'>
+					<input type='submit' value='PROCEED TO SHIPPING'></input>	
 				</form>
 
 			</div>

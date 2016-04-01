@@ -111,6 +111,42 @@
 </head>
 <body>
 
+<<<<<<< HEAD
+=======
+<div id='container'>
+
+	<div class='categories'>
+		<h3>Category</h3>
+		<ul>
+			<li><a href="#">View All</a></li>
+			<li><a href="#">Shirts</a></li>
+			<li><a href="#">Outerwear</a></li>
+		</ul>
+	</div>
+
+	<div class="rightSide">
+		<h2>SHIRTS</h2>
+		
+		<div class="classContent">
+
+
+		<?php 
+			foreach($menTees as $shirt ){
+
+		?>
+
+			<div class="product">
+				<a href="/itemDetails/<?=$shirt['id']?>"><img id = '<?= $shirt['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $shirt['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $shirt['back_image_filename']?>'/></a>
+				<h6><?= $shirt['name']?></h6>
+				<p class='bold'>$<?= $shirt['price'] ?></p>
+			</div>
+
+
+		<?php
+			}
+		?>
+
+>>>>>>> 3ce3cc0397a4b0f255f853bd7f5a42975f73e5a0
 
 <div id='container'>
     <div class='categories'>

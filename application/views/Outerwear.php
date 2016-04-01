@@ -115,6 +115,7 @@
 <div id='container'>
 
 	<div class='categories'>
+<<<<<<< HEAD
         <h3 class="category">Category</h3>
         <h5 class="category">WOMEN</h5>
         <ul>
@@ -158,6 +159,42 @@
 
         </div>
     </div>
+=======
+		<h3>Category</h3>
+		<ul>
+			<li><a href="#">View All</a></li>
+			<li><a href="#">Shirts</a></li>
+			<li><a href="#">Outerwear</a></li>
+		</ul>
+	</div>
+
+	<div class="rightSide">
+		<h2>OUTERWEAR</h2>
+		
+		<div class="classContent">
+
+		<?php 
+			foreach($menOuterwear as $jacket ){
+
+		?>
+
+			<div class="product">
+				<a href="/itemDetails/<?=$jacket['id']?>"><img id = '<?= $jacket['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $jacket['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $jacket['back_image_filename']?>'/></a>
+				<h6><?= $jacket['name']?></h6>
+				<p class='bold'>$<?= $jacket['price'] 	?></p>
+			</div>
+
+
+		<?php
+			}
+		?>
+
+		</div>
+
+	</div>
+
+
+>>>>>>> 3ce3cc0397a4b0f255f853bd7f5a42975f73e5a0
 </div>
 
 <?php $this->load->view('/partials/footer');?>

@@ -30,7 +30,7 @@
 
 <div class="container">
     <div class="row">
-        <form action="/LoginReg/process_register" method="POST">
+        <form action="/Users/process_shipping_address" method="POST">
             <div class="col-md-4 col-md-offset-1">
 <?php
 	if ($this->session->flashdata('errors')) {
