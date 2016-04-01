@@ -72,7 +72,7 @@ class Products extends CI_Controller {
 					 //image upload code
 					    $config['upload_path']          = './assets/currentProducts';
 		                $config['allowed_types']        = 'gif|jpg|png|jpeg';
-		                $config['max_size']             = 100;
+		                $config['max_size']             = 500;
 		                $config['max_width']            = 0;
 		                $config['max_height']           = 0;
 		                $config['overwrite']           = FALSE;
@@ -83,7 +83,6 @@ class Products extends CI_Controller {
 		                {
 		                        $error = array('error' => $this->upload->display_errors());
 
-		                        $this->load->view('upload_form', $error);
 		                }
 		                else
 		                {
@@ -95,7 +94,6 @@ class Products extends CI_Controller {
 		                {
 		                        $error = array('error' => $this->upload->display_errors());
 
-		                        $this->load->view('upload_form', $error);
 		                }
 		                else
 		                {
