@@ -215,6 +215,16 @@ class Products extends CI_Controller {
 		$this->Product->deleteBagItem($product_stock_id,$currentCartID);
 		redirect('/Products/DisplayBag');
 	}
+	public function search(){
+		$this->load->model('Product');
+
+		$id = $this->input->post();
+
+		$items['searchedItems']= $this->Product->getSearchedItem($id);
+
+		$this->load->view('searchProducts', $items);
+
+	}
 }
 
 

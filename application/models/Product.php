@@ -125,6 +125,15 @@ class Product extends CI_Model {
 		$query = "DELETE FROM cart_product WHERE product_stock_id = $product_stock_id AND cart_id = $cart_id";
 		$this->db->query($query);
 	}
+	public function getSearchedItem($id){
+		$query = " SELECT * FROM products WHERE color = ? ";
+
+		return $this->db->query($query, $id)->result_array(); 
+
+
+
+
+	}
 
 
 

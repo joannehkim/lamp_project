@@ -40,9 +40,9 @@ $(function () {
 
 <div id="search">
     <button type="button" class="close">×</button>
-    <form>
-        <input type="search" value="" placeholder="What are you searching for?" />
-        <button type="submit" class="btn btn-primary" id="search_button">Search</button>
+    <form action="/Products/search" method='post'>
+        <input type="search" name="color" placeholder="What are you searching for?"/>
+        <input type="submit" class="btn btn-primary" id="search_button">Search</input>
     </form>
 </div>
     <p class="white">FREE SHIPPING ON ORDERS $75+</p>
