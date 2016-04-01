@@ -9,7 +9,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>MEN SHIRTS</title>
+    <title>Shirts</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <?php $this->load->view('partials/header'); ?>
@@ -120,8 +120,6 @@
             <li><a class="type" href="/products/womenTees">Shirts</a></li>
             <li><a class="type" href="/products/womenOuterwears">Outerwear</a></li>
         </ul>
-
-
         <h5 class="category">MEN</h5>
         <ul>
             <li><a class="type" href="/products/menTees">Shirts</a></li>
@@ -130,28 +128,35 @@
 </div>
 
 <div class="rightSide">
-    <p><h3 class="page_title">MEN SHIRTS</h3>
-
-    <form action = '/Products/sortMenTees' method = "POST" >
-        <label class="label">SORT BY:</label>
-        <select class="turnintodropdown" name ="sort_by" onchange='this.form.submit()'>
-            <option>Please select</option>
-            <option value = 'created_at'>New Arrivals</option>
-            <option value = 'price'>Price: High to Low</option>
-        </select>
-    </p>
-    </form>
+    <p><h3 class="page_title">WOMEN: NEW ARRIVALS</h3>
 <div class="classContent">
 <?php 
-           foreach($menTees as $tees ){
+           foreach($newWomen as $allW){
 
        ?>
 
            <div class="product">
-               <img id = '<?= $tees['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $tees['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $tees['back_image_filename']?>'/>
-               <h6><?= $tees['name']?></h6>
-               <p class='bold'>$<?= $tees['price']     ?></p>
+               <img id = '<?= $allW['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $allW['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $allW['back_image_filename']?>'/>
+               <h6><?= $allW['name']?></h6>
+               <p class='bold'>$<?= $allW['price']     ?></p>
            </div>
+
+
+       <?php
+           }
+       ?>
+    <p><h3 class="page_title">MEN: NEW ARRIVALS</h3>
+<?php 
+           foreach($newMen as $allM){
+
+       ?>
+
+           <div class="product">
+               <img id = '<?= $allM['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $allM['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $allM['back_image_filename']?>'/>
+               <h6><?= $allM['name']?></h6>
+               <p class='bold'>$<?= $allM['price']     ?></p>
+           </div>
+
 
        <?php
            }

@@ -66,13 +66,51 @@ class Product extends CI_Model {
 
 	}
     public function getWTees() {
-        $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'shirt' ";
+        $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'shirt' ORDER BY created_at DESC";
         return $this->db->query($query)->result_array();
     }
     public function getWOuterwears() {
         $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'hoodie' ";
         return $this->db->query($query)->result_array();
     }
-
-
+    public function getWomenAll() {
+    	$query = "SELECT * FROM products WHERE products.gender = 'women' ORDER BY created_at DESC";
+    	return $this->db->query($query)->result_array();
+    }
+    public function getMenAll() {
+    	$query = "SELECT * FROM products WHERE products.gender = 'men' ORDER BY created_at DESC";
+    	return $this->db->query($query)->result_array();   	
+    }
+    public function getNewWomen() {
+    	$query = "SELECT * FROM products WHERE products.gender = 'women' ORDER BY created_at DESC LIMIT 6";
+    	return $this->db->query($query)->result_array();
+    }
+    public function getNewMen() {
+    	$query = "SELECT * FROM products WHERE products.gender = 'men' ORDER BY created_at DESC LIMIT 6";
+    	return $this->db->query($query)->result_array();
+    }
+    public function sortWTees($sort_by) {
+        $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'shirt' ORDER BY $sort_by DESC";
+        return $this->db->query($query)->result_array();
+    }
+    public function sortMTees($sort_by) {
+        $query = "SELECT * FROM products WHERE products.gender = 'men' AND products.type = 'shirt' ORDER BY $sort_by DESC";
+        return $this->db->query($query)->result_array();
+    }
+    public function sortMenOuterwear($sort_by) {
+        $query = "SELECT * FROM products WHERE products.gender = 'men' AND products.type = 'hoodie' ORDER BY $sort_by DESC";
+        return $this->db->query($query)->result_array();
+    }
+    public function sortWomenOuterwears($sort_by) {
+        $query = "SELECT * FROM products WHERE products.gender = 'women' AND products.type = 'hoodie' ORDER BY $sort_by DESC";
+        return $this->db->query($query)->result_array();  	
+    }
 }
+
+
+
+
+
+
+
+

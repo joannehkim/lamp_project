@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>Outerwear</title>
+    <title>WOMEN OUTERWEAR</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <?php $this->load->view('partials/header'); ?>
@@ -14,23 +21,25 @@
             margin: 0px;
         }
         #container{
-            margin:0px;
-/*            border: 5px dotted red;*/
-            width: 1010px;
-            margin: 130px 0px 0px 140px; 
+/*          border: 5px dotted red;*/
+            width: 1100px;
+            margin: 130px 0px 0px 70px; 
             
         }
         .categories{
             height: 400px;
             width: 190px;
+
             display: inline-block;
             vertical-align: top;
+            margin-left: 10px;
+            margin-top: 40px;
         }
         .rightSide{
             /*border: 2px dotted black;*/
             display: inline-block;
             vertical-align: top;
-            width: 805px;
+            width: 890px;
         }
         .classContent{
             text-align: center;
@@ -57,18 +66,31 @@
         li{
             margin-left: 20px;
         }
-        h6{
-            height: 15px;
-        }
 
-        /* Footer style */
+                /* Footer style */
         .footer {
             background-color: black;
-            height: 300px;
+            height: 320px;
             margin-top: 80px;
         }
-
+        .page_title {
+            text-align: center;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+        .label {
+            margin-left: 600px;
+        }
+        .category {
+            margin-left: 30px;
+            font-weight: bolder;
+        }
+        .type {
+            margin-left: 40px;
+            color: black;
+        }
     </style>
+
 
     <script type="text/javascript">
        $(document).ready(function(){
@@ -85,33 +107,51 @@
           });
        });
    </script>
+
 </head>
 <body>
 
 <div id='container'>
 
     <div class='categories'>
-        <h3>Category</h3>
+        <h3 class="category">Category</h3>
+        <h5 class="category">WOMEN</h5>
         <ul>
-            <li><a href="#">View All</a></li>
-            <li><a href="#">Shirts</a></li>
-            <li><a href="#">Outerwear</a></li>
+            <li><a class="type" href="/products/womenTees">Shirts</a></li>
+            <li><a class="type" href="/products/womenOuterwears">Outerwear</a></li>
         </ul>
-    </div>
 
-    <div class="rightSide">
-        <h2>OUTERWEAR</h2>
-        
-        <div class="classContent">
+
+        <h5 class="category">MEN</h5>
+        <ul>
+            <li><a class="type" href="/products/menTees">Shirts</a></li>
+            <li><a class="type" href="/products/outerwear">Outerwear</a></li>
+        </ul>
+</div>
+<div class="rightSide">
+    <p><h3 class="page_title">WOMEN OUTERWEAR</h3>
+
+    <form action = '/Products/sortWomenOuterwear' method = "POST" >
+        <label class="label">SORT BY:</label>
+        <select class="turnintodropdown" name ="sort_by" onchange='this.form.submit()'>
+            <option>Please select</option>
+            <option value = 'created_at'>New Arrivals</option>
+            <option value = 'price'>Price: High to Low</option>
+        </select>
+    </p>
+    </form>
+
+<div class="classContent">
+
 <?php 
-           foreach($allWOuterwears as $hoodies){
+           foreach($allWOuterwears as $outerwear){
 
        ?>
 
            <div class="product">
-               <img id = '<?= $hoodies['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $hoodies['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $hoodies['back_image_filename']?>'/>
-               <h6><?= $hoodies['name']?></h6>
-               <p class='bold'>$<?= $hoodies['price']     ?></p>
+               <img id = '<?= $outerwear['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $outerwear['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $outerwear['back_image_filename']?>'/>
+               <h6><?= $outerwear['name']?></h6>
+               <p class='bold'>$<?= $outerwear['price']     ?></p>
            </div>
 
 
@@ -125,6 +165,7 @@
 </div>
 
 <?php $this->load->view('/partials/footer');?>
+
 
 </body>
 </html>

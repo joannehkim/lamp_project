@@ -1,3 +1,4 @@
+
 <div class="footer">
   <div class="col-l-5">
   <div class="col-l-4" id="newsletter">
@@ -34,4 +35,4 @@
    </div>
   </div>
 </div>
-</div></div>
+</div>

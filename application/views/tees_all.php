@@ -9,7 +9,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>MEN SHIRTS</title>
+    <title>Shirts</title>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <?php $this->load->view('partials/header'); ?>
@@ -20,26 +20,25 @@
             padding: 0px;
             margin: 0px;
         }
-        #container{
-/*          border: 5px dotted red;*/
-            width: 1100px;
-            margin: 130px 0px 0px 70px; 
+        .container{
+            margin:0px;
+/*            border: 5px dotted red;*/
+            width: 100%;
+            height: 900px;
+            margin: 130px 0px 0px 0px; 
             
         }
         .categories{
             height: 400px;
             width: 190px;
-
             display: inline-block;
             vertical-align: top;
-            margin-left: 10px;
-            margin-top: 40px;
         }
         .rightSide{
-            /*border: 2px dotted black;*/
+            border: 2px dotted black;
             display: inline-block;
             vertical-align: top;
-            width: 890px;
+            width: 805px;
         }
         .classContent{
             text-align: center;
@@ -73,22 +72,27 @@
             height: 320px;
             margin-top: 80px;
         }
-        .page_title {
+        .category {
+            color: black;
+            margin-left: 70px;
+        }
+        .dropdown {
             text-align: center;
-            font-weight: bolder;
-            text-decoration: underline;
+        }
+        .span6 {
+            width: 200px;
         }
         .label {
-            margin-left: 600px;
-        }
-        .category {
-            margin-left: 30px;
-            font-weight: bolder;
-        }
-        .type {
-            margin-left: 40px;
             color: black;
+            font-size: 1em;
         }
+        .title {
+            font-weight: bolder;
+            font-size: 2em;
+            text-decoration: underline;
+        }
+
+
     </style>
 
 
@@ -112,46 +116,49 @@
 <body>
 
 
-<div id='container'>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 span6">
     <div class='categories'>
         <h3 class="category">Category</h3>
-        <h5 class="category">WOMEN</h5>
         <ul>
-            <li><a class="type" href="/products/womenTees">Shirts</a></li>
-            <li><a class="type" href="/products/womenOuterwears">Outerwear</a></li>
+            <li><a class="category" href="#">View All</a></li>
+            <li><a class="category" href="#">Shirts</a></li>
+            <li><a class="category" href="#">Outerwear</a></li>
         </ul>
+    </div>
+        </div>
+        <div class="col-md-9 span3">
+        <div class="classContent">
+                <h4 class="title">WOMEN: SHIRTS</h4>
 
-
-        <h5 class="category">MEN</h5>
-        <ul>
-            <li><a class="type" href="/products/menTees">Shirts</a></li>
-            <li><a class="type" href="/products/outerwear">Outerwear</a></li>
-        </ul> 
-</div>
-
-<div class="rightSide">
-    <p><h3 class="page_title">MEN SHIRTS</h3>
-
-    <form action = '/Products/sortMenTees' method = "POST" >
-        <label class="label">SORT BY:</label>
-        <select class="turnintodropdown" name ="sort_by" onchange='this.form.submit()'>
-            <option>Please select</option>
-            <option value = 'created_at'>New Arrivals</option>
-            <option value = 'price'>Price: High to Low</option>
-        </select>
-    </p>
-    </form>
-<div class="classContent">
 <?php 
-           foreach($menTees as $tees ){
+           foreach($womenTees as $allW){
 
        ?>
 
            <div class="product">
-               <img id = '<?= $tees['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $tees['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $tees['back_image_filename']?>'/>
-               <h6><?= $tees['name']?></h6>
-               <p class='bold'>$<?= $tees['price']     ?></p>
+               <img id = '<?= $allW['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $allW['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $allW['back_image_filename']?>'/>
+               <h6><?= $allW['name']?></h6>
+               <p class='bold'>$<?= $allW['price']     ?></p>
            </div>
+
+
+       <?php
+           }
+       ?>
+<h4 class="title">MEN: SHIRTS</h4>
+<?php 
+           foreach($menTees as $allM){
+
+       ?>
+
+           <div class="product">
+               <img id = '<?= $allM['id'] ?>' class="picSize" src="/assets/currentProducts/<?= $allM['front_image_filename']?>" alt="Tee 1" data-alt-src='/assets/currentProducts/<?= $allM['back_image_filename']?>'/>
+               <h6><?= $allM['name']?></h6>
+               <p class='bold'>$<?= $allM['price']     ?></p>
+           </div>
+
 
        <?php
            }

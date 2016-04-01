@@ -65,10 +65,10 @@ $this->load->view('/partials/header.php');
 </div>
 
 <div class="shop">
-SHOP WOMEN
+<a href="/products/women_all">SHOP WOMEN</a>
 </div>
 <div class="shop">
-SHOP MEN
+<a href="/products/men_all">SHOP MEN</a>
 </div>
 
 <div id = 'container'>
@@ -77,21 +77,21 @@ SHOP MEN
     <img src="/assets/adidas.png">
     <img src = '/assets/image_2.png'></a>
     <div class="shop_bottom">
-      SHOP OUTERWEAR
+      <a href="/products/outerwearAll">SHOP OUTERWEAR</a>
     </div>
 	</div>
 	<div class = 'subcontent'>
     <img src="/assets/denim.png">
 		<img src = '/assets/image_1.png'>
     <div class="shop_bottom">
-      SHOP NEW ARRIVALS
+      <a href="/products/newArrivals">SHOP NEW ARRIVALS</a>
     </div>
 	</div>
 	<div class = 'subcontent'>
     <img src="/assets/basics.png">
 		<img src = '/assets/image_3.png'>
     <div class="shop_bottom">
-      SHOP SHIRTS
+      <a href="/products/teesAll">SHOP SHIRTS</a>
     </div>
 	</div>
 </div>

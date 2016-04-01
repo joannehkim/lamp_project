@@ -22,6 +22,12 @@ class Products extends CI_Controller {
 
 		$this->load->view('Outerwear', $products);
 	}
+    public function womenOuterwears()
+    {
+        $this->load->model('Product');
+        $products['allWOuterwears'] = $this->Product->getWOuterwears();
+        $this->load->view('WOuterwear', $products);
+    }
 	public function menTees()
 	{
 		$this->load->model('Product');
@@ -32,14 +38,80 @@ class Products extends CI_Controller {
 	public function womenTees()
     {
         $this->load->model('Product');
+
         $products['allWtees'] = $this->Product->getWTees();
         $this->load->view('womenTees', $products);
     }
-    public function womenOuterwears()
+    public function sortwomenTees()
     {
         $this->load->model('Product');
-        $products['allWOuterwears'] = $this->Product->getWOuterwears();
-        $this->load->view('WOuterwear', $products);
+        $form = $this->input->post();
+
+        $products['allWtees'] = $this->Product->sortWTees($form['sort_by']);
+        $this->load->view('womenTees', $products);
+    }
+    public function sortMenTees()
+    {
+    	$this->load->model('Product');
+    	$form = $this->input->post();
+
+    	$products['menTees'] = $this->Product->sortMTees($form['sort_by']);
+    	$this->load->view('MenTees', $products);
+    }
+    public function sortMenOuterwear()
+    {
+    	$this->load->model('Product');
+    	$form = $this->input->post();
+
+    	$products['menOuterwear'] = $this->Product->sortMenOuterwear($form['sort_by']);
+    	$this->load->view('Outerwear', $products);
+    }
+    public function sortWomenOuterwear()
+    {
+    	$this->load->model('Product');
+    	$form = $this->input->post();
+
+    	$products['allWOuterwears'] = $this->Product->sortWomenOuterwears($form['sort_by']);
+    	$this->load->view('WOuterwear', $products);
+    }
+    public function women_all()
+    {
+        $this->load->model('Product');
+        $products['allWomen'] = $this->Product->getWomenAll();
+        $this->load->view('women_all', $products);
+    }
+    public function men_all()
+    {
+        $this->load->model('Product');
+        $products['allMen'] = $this->Product->getMenAll();
+        $this->load->view('men_all', $products);
+    }
+    public function outerwearAll()
+    {
+    	$this->load->model('Product');
+    	$products['allWOuterwears'] = $this->Product->getWOuterwears();
+    	$products['menOuterwear'] = $this->Product->getMOuterwear();
+    	$this->load->view('outerwear_all', $products);
+    }
+    public function teesAll()
+    {
+    	$this->load->model('Product');
+    	$products['menTees'] = $this->Product->getMTees();
+    	$products['womenTees'] = $this->Product->getWTees();
+    	$this->load->view('tees_all', $products);
+    }
+    public function newArrivals()
+    {
+    	$this->load->model('Product');
+    	$products['newWomen'] = $this->Product->getNewWomen();
+    	$products['newMen'] = $this->Product->getNewMen();
+    	$this->load->view('new_arrivals', $products);
+
+    }
+    public function getWTeeByRecent()
+    {
+    	$this->load->model('Product');
+
     }
 	public function add_item()
 	{	

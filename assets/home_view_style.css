@@ -58,8 +58,17 @@ body {
 
 .footer {
 	background-color: black;
-	height: 350px;
+	height: 380px;
     margin-top: 80px;
+}
+.footer_header {
+    color: gray;
+    border-bottom: 2px solid white;
+    margin-top: 40px;
+}
+
+.footer ul li {
+    list-style-type: none;
 }
 
 #shop_container {
@@ -132,17 +141,6 @@ a:hover {
     text-decoration: underline;
     color: gray;
 }
-
-.footer_header {
-    color: gray;
-    border-bottom: 2px solid white;
-    margin-top: 40px;
-}
-
-.footer ul li {
-    list-style-type: none;
-}
-
 #newsletter {
 	text-align: center;
 	color: white;
@@ -354,6 +352,8 @@ body {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #333;
     }
+
+
 }
 
 

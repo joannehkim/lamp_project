@@ -60,7 +60,7 @@ $(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" id="logo" href="/Products"><img src="/assets/logo.png"></a>
+      <a class="navbar-brand" id="logo" href="/Products"><img src="/assets/kcpk.png"></a>
     </div>
 
 
@@ -68,7 +68,7 @@ $(function () {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">New Arrivals</a></li>
+        <li><a href="/products/newArrivals">New Arrivals</a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men<span class="caret"></span></a>
